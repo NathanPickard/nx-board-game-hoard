@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import ReviewUtilFormatters from './review-util-formatters';
+import ReviewUtilFormatters from './shared-util-formatters';
 
 describe(' ReviewUtilFormatters', () => {
   it('should render successfully', () => {

@@ -221,9 +221,9 @@
         }
       }
     },
-    "review-util-formatters": {
-      "root": "libs/review/util-formatters",
-      "sourceRoot": "libs/review/util-formatters/src",
+    "shared-util-formatters": {
+      "root": "libs/shared/util-formatters",
+      "sourceRoot": "libs/shared/util-formatters/src",
       "projectType": "library",
       "schematics": {},
       "architect": {
@@ -231,19 +231,19 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "config": "libs/review/util-formatters/.eslintrc",
+            "config": "libs/shared/util-formatters/.eslintrc",
             "tsConfig": [
-              "libs/review/util-formatters/tsconfig.lib.json",
-              "libs/review/util-formatters/tsconfig.spec.json"
+              "libs/shared/util-formatters/tsconfig.lib.json",
+              "libs/shared/util-formatters/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/review/util-formatters/**"]
+            "exclude": ["**/node_modules/**", "!libs/shared/util-formatters/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/review/util-formatters/jest.config.js",
-            "tsConfig": "libs/review/util-formatters/tsconfig.spec.json",
+            "jestConfig": "libs/shared/util-formatters/jest.config.js",
+            "tsConfig": "libs/shared/util-formatters/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -398,7 +398,8 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "store:build:production"
+              "browserTarget": "store:build:production",
+              "proxyConfig": "apps/review/proxy.conf.json"
             }
           }
         },
@@ -453,6 +454,201 @@
             "tsConfig": ["apps/store-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!apps/store-e2e/**"]
           }
+        }
+      }
+    },
+    "store-feature-list": {
+      "projectType": "library",
+      "root": "libs/store/feature-list",
+      "sourceRoot": "libs/store/feature-list/src",
+      "prefix": "nx-board-game-hoard",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/store/feature-list/tsconfig.lib.json",
+              "libs/store/feature-list/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/store/feature-list/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/store/feature-list/jest.config.js",
+            "tsConfig": "libs/store/feature-list/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/store/feature-list/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "store-feature-details": {
+      "projectType": "library",
+      "root": "libs/store/feature-details",
+      "sourceRoot": "libs/store/feature-details/src",
+      "prefix": "nx-board-game-hoard",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/store/feature-details/tsconfig.lib.json",
+              "libs/store/feature-details/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/store/feature-details/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/store/feature-details/jest.config.js",
+            "tsConfig": "libs/store/feature-details/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/store/feature-details/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "store-feature-cart": {
+      "projectType": "library",
+      "root": "libs/store/feature-cart",
+      "sourceRoot": "libs/store/feature-cart/src",
+      "prefix": "nx-board-game-hoard",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/store/feature-cart/tsconfig.lib.json",
+              "libs/store/feature-cart/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/store/feature-cart/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/store/feature-cart/jest.config.js",
+            "tsConfig": "libs/store/feature-cart/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/store/feature-cart/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "store-ui-formatters": {
+      "projectType": "library",
+      "root": "libs/store/ui-formatters",
+      "sourceRoot": "libs/store/ui-formatters/src",
+      "prefix": "nx-board-game-hoard",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/store/ui-formatters/tsconfig.lib.json",
+              "libs/store/ui-formatters/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/store/ui-formatters/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/store/ui-formatters/jest.config.js",
+            "tsConfig": "libs/store/ui-formatters/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/store/ui-formatters/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "store-data-access-games": {
+      "projectType": "library",
+      "root": "libs/store/data-access-games",
+      "sourceRoot": "libs/store/data-access-games/src",
+      "prefix": "nx-board-game-hoard",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/store/data-access-games/tsconfig.lib.json",
+              "libs/store/data-access-games/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/store/data-access-games/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/store/data-access-games/jest.config.js",
+            "tsConfig": "libs/store/data-access-games/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/store/data-access-games/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "store-data-access-cart": {
+      "projectType": "library",
+      "root": "libs/store/data-access-cart",
+      "sourceRoot": "libs/store/data-access-cart/src",
+      "prefix": "nx-board-game-hoard",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/store/data-access-cart/tsconfig.lib.json",
+              "libs/store/data-access-cart/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/store/data-access-cart/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/store/data-access-cart/jest.config.js",
+            "tsConfig": "libs/store/data-access-cart/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/store/data-access-cart/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
         }
       }
     }
@@ -529,7 +725,8 @@
       "e2eTestRunner": "cypress"
     },
     "@nrwl/angular:library": {
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "style": "scss"
     }
   },
   "defaultProject": "review"
