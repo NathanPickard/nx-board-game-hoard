@@ -1,4 +1,4 @@
-import { CartItem } from '@bghoard/api-interfaces';
+import { CartItem } from '@nx-board-game-hoard/api-interfaces';
 import { Request } from 'express';
 
 const cart: Record<string, number> = {};
