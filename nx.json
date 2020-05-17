@@ -32,9 +32,6 @@
     "api-interfaces": {
       "tags": []
     },
-    "review-ui-tile": {
-      "tags": []
-    },
     "shared-util-formatters": {
       "tags": []
     },
@@ -70,6 +67,9 @@
       "tags": []
     },
     "store-data-access-cart": {
+      "tags": []
+    },
+    "shared-ui-tile": {
       "tags": []
     }
   }

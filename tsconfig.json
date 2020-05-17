@@ -19,9 +19,6 @@
       "@nx-board-game-hoard/api-interfaces": [
         "libs/api-interfaces/src/index.ts"
       ],
-      "@nx-board-game-hoard/review/ui-tile": [
-        "libs/review/ui-tile/src/index.ts"
-      ],
       "@nx-board-game-hoard/shared/util-formatters": [
         "libs/shared/util-formatters/src/index.ts"
       ],
@@ -51,6 +48,9 @@
       ],
       "@nx-board-game-hoard/store/data-access-cart": [
         "libs/store/data-access-cart/src/index.ts"
+      ],
+      "@nx-board-game-hoard/shared/ui-tile": [
+        "libs/shared/ui-tile/src/index.ts"
       ]
     }
   },

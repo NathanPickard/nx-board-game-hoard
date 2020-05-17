@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GamesService } from '@nx-board-game-hoard/store/data-access-games';
+import '@nx-board-game-hoard/shared/ui-tile';
 
 @Component({
   selector: 'nx-board-game-hoard-game-list',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameListComponent implements OnInit {
 
-  constructor() { }
+  games$ = this.gamesService.games$;
+
+  constructor(private gamesService: GamesService) { }
 
   ngOnInit(): void {
   }

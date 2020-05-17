@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useGames } from '@bghoard/review/data-access-games';
-import { currencyFormat, ratingFormat } from '@bghoard/shared/util-formatters';
+import { useGames } from '@nx-board-game-hoard/review/data-access-games'
+import { currencyFormat, ratingFormat } from '@nx-board-game-hoard/shared/util-formatters';
 import '@bghoard/shared/ui-tile';
 
 /* eslint-disable-next-line */
