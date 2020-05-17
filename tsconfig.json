@@ -18,6 +18,21 @@
     "paths": {
       "@nx-board-game-hoard/api-interfaces": [
         "libs/api-interfaces/src/index.ts"
+      ],
+      "@nx-board-game-hoard/review/ui-tile": [
+        "libs/review/ui-tile/src/index.ts"
+      ],
+      "@nx-board-game-hoard/review/util-formatters": [
+        "libs/review/util-formatters/src/index.ts"
+      ],
+      "@nx-board-game-hoard/review/data-access-games": [
+        "libs/review/data-access-games/src/index.ts"
+      ],
+      "@nx-board-game-hoard/review/feature-list": [
+        "libs/review/feature-list/src/index.ts"
+      ],
+      "@nx-board-game-hoard/review/feature-details": [
+        "libs/review/feature-details/src/index.ts"
       ]
     }
   },

@@ -1,14 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { Game } from '@nx-board-game-hoard/api-interfaces';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { ReviewFeatureDetails } from '@nx-board-game-hoard/review/feature-details';
+import { ReviewFeatureList } from '@nx-board-game-hoard/review/feature-list';
 
 export const App = () => {
-  const [games, setGames] = useState<Game[]>([]);
 
-  useEffect(() => {
-    fetch('/api/game')
-      .then((r) => r.json())
-      .then(setGames);
-  }, []);
+  return (
+  <>
+    <BrowserRouter basename="/review">
+      <h1 style={{ textAlign: 'center' }}>Board Game Hoard: Review</h1>
+      <Route exact path="/" render={() => <ReviewFeatureList />} />
+      <Route
+        path="/:game"
+        render={({ match }) => (
+          <ReviewFeatureDetails gameId={match.params.game} />
+        )}
+      />Î
+    </BrowserRouter>
 
   return (
     <>
